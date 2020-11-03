@@ -4,7 +4,13 @@ public class main {
     public static void main(String[] args) {
         example1();
         example2();
+        example3();
+        Predicate<String> p1 = s -> s != null;
+        Predicate<String> p2 = s -> !s.isEmpty();
+        Predicate<String> p3 = p2.and(p1.negate());
+    }
 
+    private static void example3() {
         Predicate<String> p1 = s -> s != null;
         Predicate<String> p2 = s -> !s.isEmpty();
         Predicate<String> p3 = p1.and(p2);
