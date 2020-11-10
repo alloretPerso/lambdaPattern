@@ -4,24 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCard {
-    List<Product> products = new ArrayList<>();
+    List<LineItem> lineItems = new ArrayList<>();
 
 
-    public void addProduct(Product product) {
-        products.add(product);
+    public void addLineItem(LineItem lineItem) {
+        lineItems.add(lineItem);
     }
 
     public int totalCost() {
-        return products
+        return lineItems
                 .stream()
-                .mapToInt(Product::getPrice)
+                .mapToInt(LineItem::getPrice)
                 .sum();
     }
 
     @Override
     public String toString() {
         return "ShoppingCard{" +
-                "products=" + products.toString() +
+                "products=" + lineItems.toString() +
                 '}';
     }
 }
